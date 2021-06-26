@@ -15,7 +15,6 @@ import Swal from 'sweetalert2';
 
 
 //crear nuevos productos
-
 export function crearNuevosProsductoAction(producto){
     return async (dispatch) => {
         dispatch(agregarProducto());
@@ -98,5 +97,36 @@ const descargaProductosExitosa = productos => ({
 
 const descargaProductosError = () => ({
     type: DESCARGA_PRODUCTOS_ERROR,
+    payload: true
+});
+
+//Selecciona y elimina el producto
+export function borrarProductoAction(id){
+    return async (dispatch)=>{
+        dispatch(obtenerProductoEliminar(id));
+
+        try {
+            await clienteAxios.delete(`/productos/${id}`);   
+            dispatch(eliminarProductoExito());       
+            //si se elimina
+        Swal.fire("Eliminado!", "El producto fue eliminado.", "success");
+        } catch (error) {
+            console.log(error);
+            dispatch(eliminarProductoError());
+        }
+    }
+}
+
+const obtenerProductoEliminar = id => ({
+    type:OBTENER_PRODUCTO_ELIMINAR,
+    payload: id
+})
+
+const eliminarProductoExito = () => ({
+    type: PRODUCTO_ELIMINADO_EXITO
+})
+
+const eliminarProductoError = () => ({
+    type: PRODUCTO_ELIMINADO_ERROR,
     payload: true
 });

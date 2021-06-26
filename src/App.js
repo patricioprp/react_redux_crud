@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Productos from './components/Productos';
 import NuevoProducto from './components/NuevoProducto';
 import EditarProducto from './components/EditarProducto';
+//para levantar el servidor fake
+//json-server db.json --port 4000
 
 import  {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 
