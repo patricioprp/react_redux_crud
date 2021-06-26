@@ -1,29 +1,84 @@
 {
-    "productos": [
-      {
-        "id": 1,
-        "nombre": "Jugo de Zanahoria",
-        "precio": "31111"
-      },
-      {
-        "id": 2,
-        "nombre": "Jugo de Naranja",
-        "precio": "1"
-      },
-      {
-        "nombre": "Jugo de Naranja",
-        "precio": "300",
-        "id": 3
-      },
-      {
-        "nombre": "Rib Eye 800g",
-        "precio": "200",
-        "id": 4
-      },
-      {
-        "nombre": "Jugo de Fresa",
-        "precio": "200",
-        "id": 5
-      }
-    ]
-  }
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Jugo de Zanahoria",
+      "precio": "31111"
+    },
+    {
+      "id": 2,
+      "nombre": "Jugo de Naranja",
+      "precio": "1"
+    },
+    {
+      "nombre": "Jugo de Naranja",
+      "precio": "300",
+      "id": 3
+    },
+    {
+      "nombre": "Rib Eye 800g",
+      "precio": "200",
+      "id": 4
+    },
+    {
+      "nombre": "Jugo de Fresa",
+      "precio": "200",
+      "id": 5
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 6
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 7
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 8
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 9
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 10
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 3434,
+      "id": 11
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 777,
+      "id": 12
+    },
+    {
+      "nombre": "cocoa3",
+      "precio": 232,
+      "id": 13
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 2323,
+      "id": 14
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 2323,
+      "id": 15
+    },
+    {
+      "nombre": "nuevo producto",
+      "precio": 3434,
+      "id": 16
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 import React,{useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+//useSelector es el hooks de react-redux para leer el state
+
 //Actions de redux
 import { crearNuevosProsductoAction } from "../actions/productosActions";
 
-const NuevoProducto = () => {
+//cuando instalamos react-router-dom y nuestros componentes estan dentro de el tenemos acceso al history
+const NuevoProducto = ({history}) => {
 
     //State del componente
     const [nombre,guardarNombre] = useState('');
@@ -13,6 +16,12 @@ const NuevoProducto = () => {
   //utilizar use dispatch y te crea una funcion
   const dispatch = useDispatch();
 
+  //acceder al state del store
+  // const cargando = useSelector( state => state);para ver todo el state
+  // console.log(cargando);
+  const cargando = useSelector( state => state.productos.loading);
+  const error = useSelector( state => state.productos.error);
+ 
   //mandar a agregar el action de productoActions
   const agregrarProducto = producto => dispatch(crearNuevosProsductoAction(producto));
 
@@ -32,6 +41,9 @@ const NuevoProducto = () => {
         nombre: nombre,
         precio:precio
     }); 
+
+    //Redireccionar
+    history.push('/');
   };
   return (
     <div className="row justify-content-center">
@@ -71,6 +83,8 @@ const NuevoProducto = () => {
                 Agregar
               </button>
             </form>
+            { cargando ? <p>Cargando...</p> : null}
+            {error ? <p className="alert alert-danger p2 mt-4 text-center">Ocurrio un Error</p> : null}
           </div>
         </div>
       </div>
