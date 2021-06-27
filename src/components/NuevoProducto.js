@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 //Actions de redux
 import { crearNuevosProsductoAction } from "../actions/productosActions";
+import {mostrarAlerta} from "../actions/alertaActions";
+import {ocultarAlertaAction} from "../actions/alertaActions";
 
 //cuando instalamos react-router-dom y nuestros componentes estan dentro de el tenemos acceso al history
 const NuevoProducto = ({history}) => {
@@ -21,6 +23,7 @@ const NuevoProducto = ({history}) => {
   // console.log(cargando);
   const cargando = useSelector( state => state.productos.loading);
   const error = useSelector( state => state.productos.error);
+  const alerta = useSelector( state => state.alerta.alerta);
  
   //mandar a agregar el action de productoActions
   const agregrarProducto = producto => dispatch(crearNuevosProsductoAction(producto));
@@ -31,10 +34,18 @@ const NuevoProducto = ({history}) => {
 
     //validar formulario
     if(nombre.trim() === '' || precio <= 0 ){
+  
+        const alerta = {
+          msg:'Ambos Campos son Obligatorios',
+          classes:'alert alert-danger text-center text-uppercase p3'
+        }
+        dispatch(mostrarAlerta(alerta));
         return;
     }
 
     // si no hay errores
+
+    dispatch(ocultarAlertaAction());
 
     // crear el nuevo producto
     agregrarProducto({
@@ -53,6 +64,7 @@ const NuevoProducto = ({history}) => {
             <h2 className="text-center mb-4 font weight-bold">
               Nuevo Producto
             </h2>
+            { alerta ? <p className={alerta.classes}>{alerta.msg}</p> : null}
             <form onSubmit={submitNuevoProducto}>
               <div className="form-group">
                 <label>Nombre de Producto</label>
