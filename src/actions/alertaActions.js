@@ -3,8 +3,6 @@ import {
     OCULTAR_ALERTA
 } from '../types'
 
-import Swal from 'sweetalert2';
-
 //Muestra alerta
 
 export function mostrarAlerta(alerta){

@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import Producto from "../components/Producto";
 
 //redux
@@ -15,6 +15,7 @@ const Productos = () => {
     //mandar a agregar el action de productoActions
     const cargarProductos = () => dispatch(obtenerProductosAction());
     cargarProductos();
+    //eslint-disable-next-line
   }, []);
 
   //Obtener el state
